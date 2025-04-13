@@ -1,0 +1,77 @@
+const games = [
+  {
+    title: "human or not?",
+    link: "https://www.humanornot.ai",
+    image: "img/01.png",
+    description:
+      "Chat with someone for two minutes, and try to figure out if it was a fellow human or an AI bot. Think you can tell the difference?",
+    creditText: "AI21Labs",
+    creditLink: "https://www.ai21.com/",
+    theme: "theme-green",
+    embed: true,
+  },
+  {
+    title: "Quick, draw!",
+    link: "https://quickdraw.withgoogle.com",
+    image: "img/02.png",
+    description:
+      "Can a neural network learn to recognize doodling? Help teach it by adding your drawings to the world’s largest doodling data set, shared publicly to help with machine learning research.",
+    creditText: "Google",
+    creditLink: "https://www.google.com/",
+    theme: "theme-quickdraw",
+    embed: false,
+  },
+  {
+    title: "Inifnite Wonderland",
+    link: "https://infinitewonderland.withgoogle.com",
+    image: "img/03.png",
+    description:
+      "This is an AI experiment where the timeless classic Alice’s Adventures in Wonderland is endlessly reimagined by artists, AI and you.",
+    creditText: "Google Labs",
+    creditLink: "https://labs.google/",
+    theme: "theme-infinitewonderland",
+    embed: true,
+  },
+  {
+    title: "Death by AI",
+    link: "https://deathbyai.gg",
+    image: "img/04.png",
+    description: "Survival party game",
+    creditText: "Playroom",
+    creditLink: "https://joinplayroom.com/",
+    theme: "theme-deathbyai",
+    embed: true,
+  },
+  {
+    title: "Infinite Craft",
+    link: "https://neal.fun/infinite-craft/",
+    image: "img/05.png",
+    description:
+      "A crafting game where you can make anything. No really it's pretty much endless I think. Start with Water, Fire, Wind, and Earth and branch out to the rest of the universe.",
+    creditText: "Neal Agarwal",
+    creditLink: "https://neal.fun/",
+    theme: "theme-mintchip",
+    embed: false,
+  },
+  {
+    title: "MonsterMatch",
+    link: "https://d2v2m3z6005g8q.cloudfront.net",
+    image: "img/06.png",
+    description: "MonsterMatch simulates a dating app and shows you how dating apps really work.",
+    creditText: "Hidden Switch",
+    creditLink: "https://monstermatch.hiddenswitch.com/about",
+    theme: "theme-crimsonstorm",
+    embed: true,
+  },
+  {
+    title: "Survival of the best fit",
+    link: "https://www.survivalofthebestfit.com/game/",
+    image: "img/07.png",
+    description:
+      "Survival of the Best Fit is an educational game about hiring bias in AI. It aims to explain how the misuse of AI can make machines inherit human biases and further inequality. ",
+    creditText: "Gabor Csapo,Jihyun Kim,Miha Klasinc, andAlia ElKattan.",
+    creditLink: "https://www.survivalofthebestfit.com/about",
+    theme: "theme-survivalofthebestfit",
+    embed: true,
+  },
+];

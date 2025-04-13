@@ -1,0 +1,83 @@
+.theme-green {
+  --border-gradient-start: #458a40;
+  --border-gradient-end: #5dbb4d;
+  --text-color: #33f160;
+  --border-color: #5dbb4d;
+}
+
+.theme-pink {
+  --border-gradient-start: #ff8ac9;
+  --border-gradient-end: #ff4a8d;
+  --text-color: #ff4a8d;
+  --border-color: #ff4a8d;
+}
+
+.theme-cyberlime {
+  --border-gradient-start: rgba(26, 39, 0, 1); /* dark olive green */
+  --border-gradient-end: rgba(192, 255, 71, 1); /* lime */
+  --text-color: rgba(192, 255, 71, 1);
+  --border-color: rgba(192, 255, 71, 1);
+}
+
+.theme-magentanight {
+  --border-gradient-start: rgba(53, 0, 40, 1); /* deep magenta-black */
+  --border-gradient-end: rgba(255, 107, 184, 1); /* hot pink */
+  --text-color: rgba(255, 107, 184, 1);
+  --border-color: rgba(255, 107, 184, 1);
+}
+
+.theme-oceangrid {
+  --border-gradient-start: rgba(0, 32, 51, 1); /* deep teal */
+  --border-gradient-end: rgba(102, 229, 255, 1); /* light cyan */
+  --text-color: rgba(102, 229, 255, 1);
+  --border-color: rgba(102, 229, 255, 1);
+}
+
+.theme-crimsonstorm {
+  --border-gradient-start: rgba(56, 0, 0, 1); /* deep maroon */
+  --border-gradient-end: rgba(255, 69, 69, 1); /* bright red */
+  --text-color: rgba(255, 69, 69, 1);
+  --border-color: rgba(255, 69, 69, 1);
+}
+
+.theme-sunsetblast {
+  --border-gradient-start: rgba(75, 36, 0, 1); /* burnt orange */
+  --border-gradient-end: rgba(255, 202, 64, 1); /* golden yellow */
+  --text-color: rgba(255, 202, 64, 1);
+  --border-color: rgba(255, 202, 64, 1);
+}
+
+.theme-mintchip {
+  --border-gradient-start: rgba(0, 48, 36, 1); /* dark forest green */
+  --border-gradient-end: rgba(158, 255, 192, 1); /* mint */
+  --text-color: rgba(158, 255, 192, 1);
+  --border-color: rgba(158, 255, 192, 1);
+}
+
+.theme-deathbyai {
+  --border-gradient-start: rgba(64, 34, 254, 1);
+  --border-gradient-end: rgba(171, 72, 255, 1);
+  --text-color: white;
+  --border-color: rgba(171, 72, 255, 1);
+}
+
+.theme-survivalofthebestfit {
+  --border-gradient-start: rgba(254, 204, 198, 1); /* deep magenta-black */
+  --border-gradient-end: rgba(237, 130, 129, 1); /* hot pink */
+  --text-color: rgba(254, 204, 198, 1);
+  --border-color: rgba(237, 130, 129, 1);
+}
+
+.theme-quickdraw {
+  --border-gradient-start: rgba(255, 209, 56, 1); /* deep magenta-black */
+  --border-gradient-end: rgba(226, 181, 54, 1); /* hot pink */
+  --text-color: #ffeba7;
+  --border-color: rgba(255, 209, 56, 1);
+}
+
+.theme-infinitewonderland {
+  --border-gradient-start: white; /* deep magenta-black */
+  --border-gradient-end: #f2f2f2; /* hot pink */
+  --text-color: white;
+  --border-color: #f2f2f2;
+}
