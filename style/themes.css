@@ -34,9 +34,9 @@
 }
 
 .theme-crimsonstorm {
-  --border-gradient-start: rgba(56, 0, 0, 1); /* deep maroon */
-  --border-gradient-end: rgba(255, 69, 69, 1); /* bright red */
-  --text-color: rgba(255, 69, 69, 1);
+  --border-gradient-start: rgba(136, 50, 102, 1); /* deep maroon */
+  --border-gradient-end: rgba(238, 68, 101, 1); /* bright red */
+  --text-color: #ee4465;
   --border-color: rgba(255, 69, 69, 1);
 }
 
