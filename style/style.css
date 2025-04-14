@@ -109,37 +109,36 @@ main {
 }
 
 a.game {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  border: 2px solid #f0c8c8;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
   text-decoration: none;
-  color: #f0c8c8;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-  cursor: pointer;
-}
-
-a.game.active {
-  background-color: rgba(240, 200, 200, 0.2);
-  font-weight: bold;
-  border-color: #68ff9e;
-  transform: scale(1.05);
-  box-shadow: 0 0 12px #68ff9e, 0 0 24px #f0c8c8;
-}
-
-a.game.active,
-a.game.active h2 {
-  color: #68ff9e;
-}
-
-a.game:hover {
-  background-color: #283c7a;
-  transform: scale(1.03);
-  box-shadow: 0 0 8px #f0c8c8;
+  font-family: "Press Start 2P", cursive; /* Pixel-style font */
+  font-size: 1rem;
+  color: #ff66cc; /* Pinkish text */
+  background: linear-gradient(to bottom, #6e1d93, #290142); /* Purple gradient */
+  border: 4px solid #ff33aa; /* Bright pink border */
+  border-radius: 0; /* No border radius for pixel look */
+  padding: 1.5rem 2.5rem;
+  box-shadow: inset 0 0 0 4px #000, 0 8px 0 #c02774, 0 12px 0 #000;
+  transition: transform 0.2s ease;
+  image-rendering: pixelated;
   cursor: url("../img/hover_cursor.png"), pointer;
+}
+
+a.game:active,
+a.game.active {
+  transform: translateY(4px);
+  box-shadow: inset 0 0 0 4px #000, 0 4px 0 #c02774, 0 6px 0 #000;
+  background: linear-gradient(to bottom, #5b1681, #1a0030);
+  color: #ff66cc;
+  border-color: #ff66cc;
+}
+
+/* Hover effect */
+a.game:hover {
+  background-color: #7a24b2;
+  box-shadow: inset 0 0 0 4px #000, 0 10px 0 #d6368c, 0 14px 0 #000;
+  transform: scale(1.01);
 }
 
 @keyframes pulse {
