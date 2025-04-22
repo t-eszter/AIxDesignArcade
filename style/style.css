@@ -318,3 +318,12 @@ a.game.active {
   z-index: 1000;
   cursor: pointer;
 }
+
+.preview-box.warning {
+  color: #b94a48;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+}

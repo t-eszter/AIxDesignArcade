@@ -62,6 +62,18 @@ function updatePreview(game) {
   previewDesc.className = "preview-box";
   credits.className = "preview-box";
 
+  const oldWarning = document.getElementById("embed-warning");
+  if (oldWarning) oldWarning.remove();
+
+  if (!game.embed) {
+    const warningDiv = document.createElement("div");
+    warningDiv.id = "embed-warning";
+    warningDiv.className = "preview-box warning";
+    warningDiv.textContent =
+      "⚠️ This game will open in a new tab. Please return to this tab when you are done playing.";
+    credits.after(warningDiv);
+  }
+
   const themeClass = game.theme || "theme-green";
 
   if (themeClass.startsWith("theme-")) {
