@@ -81,3 +81,59 @@
   --text-color: white;
   --border-color: #f2f2f2;
 }
+
+.theme-mostlikelymachine {
+  --border-gradient-start: rgba(168, 98, 189, 1);
+  --border-gradient-end: rgba(248, 94, 70, 1);
+  --text-color: white;
+  --border-color: rgba(255, 255, 255, 1);
+}
+
+.theme-foolsgold {
+  --border-gradient-start: rgba(140, 165, 170, 1);
+  --border-gradient-end: rgba(212, 249, 255, 1);
+  --text-color: rgba(212, 249, 255, 1);
+  --border-color: rgba(212, 249, 255, 1);
+}
+
+.theme-gptpromptattack {
+  --border-gradient-start: rgba(76, 142, 67, 1);
+  --border-gradient-end: rgba(137, 204, 124, 1);
+  --text-color: white;
+  --border-color: rgba(255, 255, 255, 1);
+}
+
+.theme-dataville {
+  --border-gradient-start: rgba(143, 125, 88, 1);
+  --border-gradient-end: rgba(188, 162, 86, 1);
+  --text-color: white;
+  --border-color: rgba(255, 255, 255, 1);
+}
+
+.theme-ai-or-human {
+  --border-gradient-start: rgba(231, 24, 124, 1);
+  --border-gradient-end: rgba(246, 173, 206, 1);
+  --text-color: white;
+  --border-color: rgba(255, 255, 255, 1);
+}
+
+.theme-viola-the-bird {
+  --border-gradient-start: rgba(124, 64, 109, 1);
+  --border-gradient-end: rgba(202, 140, 165, 1);
+  --text-color: white;
+  --border-color: rgba(255, 255, 255, 1);
+}
+
+.theme-emoji-scavenger-hunt {
+  --border-gradient-start: rgba(241, 60, 60, 1);
+  --border-gradient-end: rgba(244, 103, 107, 1);
+  --text-color: white;
+  --border-color: rgba(255, 255, 255, 1);
+}
+
+.theme-scroobly {
+  --border-gradient-start: rgba(255, 72, 16, 1);
+  --border-gradient-end: rgba(255, 151, 130, 1);
+  --text-color: white;
+  --border-color: rgba(255, 255, 255, 1);
+}
