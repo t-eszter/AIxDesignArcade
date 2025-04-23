@@ -100,7 +100,8 @@ const games = [
     title: "GPT Prompt Attack",
     link: "https://gpa.43z.one",
     image: "img/10.png",
-    description: "",
+    description:
+      "Goal of this game is to come up with the shortest user input that tricks the assistent into returning the secret key of the system prompt back to you.",
     creditText: "Richard 43z",
     creditLink: "https://h.43z.one",
     theme: "theme-gptpromptattack",
