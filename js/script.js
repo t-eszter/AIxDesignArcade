@@ -44,12 +44,28 @@ gameElements.forEach((el, index) => {
 
 function updatePreview(game) {
   const previewImg = document.getElementById("preview-image");
+  const previewVideo = document.getElementById("preview-video");
   const previewDesc = document.getElementById("preview-description");
   const credits = document.getElementById("credits");
   const creditText = document.createElement("a");
 
+  clearTimeout(previewImg._videoTimeout);
+
+  // Remove any previous video
+  const existingVideo = document.getElementById("preview-video");
+  if (existingVideo) existingVideo.remove();
+  previewImg.classList.remove("fade-out");
+  previewImg.style.opacity = "1";
+
+  // Restore image visibility
+  previewImg.style.opacity = "1";
+  previewImg.style.display = "block";
+  previewImg.classList.remove("fade-out");
+
   previewImg.src = game.image;
   previewImg.alt = game.title;
+  previewImg.style.display = "block";
+
   previewDesc.textContent = game.description;
   previewDesc.style.display = game.description ? "block" : "none";
   credits.style.display = game.creditText ? "block" : "none";
@@ -75,10 +91,33 @@ function updatePreview(game) {
   }
 
   const themeClass = game.theme || "theme-green";
-
   if (themeClass.startsWith("theme-")) {
     previewDesc.classList.add(themeClass);
     credits.classList.add(themeClass);
+  }
+
+  if (game.video) {
+    previewImg._videoTimeout = setTimeout(() => {
+      // 1. create the element with the base selector only (opacity: 0)
+      const videoEl = document.createElement("video");
+      videoEl.id = "preview-video";
+      videoEl.src = game.video;
+      videoEl.autoplay = true;
+      videoEl.muted = true;
+      videoEl.loop = true;
+      videoEl.playsInline = true; // inherits opacity:0 from #preview-video
+      videoEl.style.maxWidth = "100%";
+      videoEl.style.borderRadius = "8px";
+
+      // put it right after the image
+      previewImg.parentElement.insertBefore(videoEl, previewImg.nextSibling);
+
+      // 2. let the browser paint once, then switch opacities
+      requestAnimationFrame(() => {
+        videoEl.classList.add("fade-in"); // fades video 0 → 1
+        previewImg.classList.add("fade-out"); // fades image 1 → 0
+      });
+    }, 3000);
   }
 }
 

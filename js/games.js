@@ -3,6 +3,7 @@ const games = [
     title: "human or not?",
     link: "https://www.humanornot.ai",
     image: "img/01.png",
+    video: "img/01.mp4",
     description:
       "Chat with someone for two minutes, and try to figure out if it was a fellow human or an AI bot. Think you can tell the difference?",
     creditText: "AI21Labs",
@@ -14,6 +15,7 @@ const games = [
     title: "Quick, draw!",
     link: "https://quickdraw.withgoogle.com",
     image: "img/02.png",
+    video: "img/02.mp4",
     description:
       "Can a neural network learn to recognize doodling? Help teach it by adding your drawings to the world’s largest doodling data set, shared publicly to help with machine learning research.",
     creditText: "Google",
@@ -25,6 +27,7 @@ const games = [
     title: "Inifnite Wonderland",
     link: "https://infinitewonderland.withgoogle.com",
     image: "img/03.png",
+    video: "img/03.mp4",
     description:
       "This is an AI experiment where the timeless classic Alice’s Adventures in Wonderland is endlessly reimagined by artists, AI and you.",
     creditText: "Google Labs",
@@ -36,6 +39,7 @@ const games = [
     title: "Death by AI",
     link: "https://deathbyai.gg",
     image: "img/04.png",
+    video: "img/04.mp4",
     description: "Survival party game",
     creditText: "Playroom",
     creditLink: "https://joinplayroom.com/",
@@ -46,6 +50,7 @@ const games = [
     title: "Infinite Craft",
     link: "https://neal.fun/infinite-craft/",
     image: "img/05.png",
+    video: "img/05.mp4",
     description:
       "A crafting game where you can make anything. No really it's pretty much endless I think. Start with Water, Fire, Wind, and Earth and branch out to the rest of the universe.",
     creditText: "Neal Agarwal",
@@ -57,6 +62,7 @@ const games = [
     title: "MonsterMatch",
     link: "https://d2v2m3z6005g8q.cloudfront.net",
     image: "img/06.png",
+    video: "img/06.mp4",
     description: "MonsterMatch simulates a dating app and shows you how dating apps really work.",
     creditText: "Hidden Switch",
     creditLink: "https://monstermatch.hiddenswitch.com/about",
@@ -67,6 +73,7 @@ const games = [
     title: "Survival of the best fit",
     link: "https://www.survivalofthebestfit.com/game/",
     image: "img/07.png",
+    video: "img/07.mp4",
     description:
       "Survival of the Best Fit is an educational game about hiring bias in AI. It aims to explain how the misuse of AI can make machines inherit human biases and further inequality. ",
     creditText: "Gabor Csapo,Jihyun Kim,Miha Klasinc, andAlia ElKattan.",
@@ -78,6 +85,7 @@ const games = [
     title: "Most likely machine",
     link: "https://mostlikelymachine.artefactgroup.com",
     image: "img/08.png",
+    video: "img/08.mp4",
     description:
       "Algorithms power the world, but they can make mistakes. Build your own algorithm and see how it impacts the future – for good and for bad.",
     creditText: "Artefact",
@@ -89,6 +97,7 @@ const games = [
     title: "Fool's gold",
     link: "https://project-fools-gold.vercel.app",
     image: "img/09.png",
+    video: "img/09.mp4",
     description:
       "The goal of Fool's Gold is to playfully consider what “makes you human.” While most interactions with large language models are cold or transactional, this game encourages (and rewards) vulnerability and self-reflection.",
     creditText: "Dustin Brown",
@@ -99,6 +108,7 @@ const games = [
   {
     title: "GPT Prompt Attack",
     link: "https://gpa.43z.one",
+    video: "img/10.mp4",
     image: "img/10.png",
     description:
       "Goal of this game is to come up with the shortest user input that tricks the assistent into returning the secret key of the system prompt back to you.",
@@ -111,6 +121,7 @@ const games = [
     title: "Dataville",
     link: "https://hellagrapes.itch.io/dataville",
     image: "img/11.png",
+    video: "img/11.mp4",
     description:
       "Dataville is a visual novel set in a dystopian present where large companies rely on the unseen, underpaid labor of gig workers to train massive AI models.",
     creditText: "brent bailey",
@@ -122,6 +133,7 @@ const games = [
     title: "AI or human",
     link: "https://ai-or-human.github.io",
     image: "img/12.png",
+    video: "img/12.mp4",
     description:
       "AI-generated media content has come to stay, looking more human than ever. Play the game and try to guess the difference between what is AI or Human. Can you tell the difference?",
     creditText: "Carlos Entrena, Davor Ljubenkov, Reza Arkan",
@@ -133,6 +145,7 @@ const games = [
     title: "Viola the Bird",
     link: "https://artsandculture.google.com/experiment/nAEJVwNkp-FnrQ",
     image: "img/13.png",
+    video: "img/13.mp4",
     description:
       "Viola the Bird is the world's first “bird-tuoso” in string instruments. Regardless of your musical ability, you can help Viola the Bird play its cello-inspired instrument, and take a playful musical journey from its home in the wild to the concert hall of its dreams.",
     creditText: "David Li",
@@ -144,6 +157,7 @@ const games = [
     title: "Emoji Scavenger Hunt",
     link: "https://archive.google/emojiscavengerhunt/",
     image: "img/14.png",
+    video: "img/14.mp4",
     description:
       "Locate the emoji we show you in the real world with your phone’s camera. A neural network will try to guess what it’s seeing. Make sure your sound is on.",
     creditText: "Google",
@@ -155,6 +169,7 @@ const games = [
     title: "Scroobly",
     link: "https://www.scroobly.com",
     image: "img/15.png",
+    video: "img/15.mp4",
     description:
       "Create fun animations in real-time with your camera. A simple way to make doodles come to life - no design expertise or coding required.",
     creditText: "Google Partner Innovation & bit.studio",
