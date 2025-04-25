@@ -44,7 +44,6 @@ gameElements.forEach((el, index) => {
 
 function updatePreview(game) {
   const previewImg = document.getElementById("preview-image");
-  const previewVideo = document.getElementById("preview-video");
   const previewDesc = document.getElementById("preview-description");
   const credits = document.getElementById("credits");
   const creditText = document.createElement("a");
@@ -53,24 +52,23 @@ function updatePreview(game) {
 
   const existingVideo = document.getElementById("preview-video");
   if (existingVideo) existingVideo.remove();
+
   previewImg.classList.remove("fade-out");
   previewImg.style.opacity = "1";
 
-  previewImg.style.opacity = "1";
-  previewImg.style.display = "block";
-  previewImg.classList.remove("fade-out");
-
+  previewImg.crossOrigin = "anonymous";
   previewImg.src = game.image;
   previewImg.alt = game.title;
   previewImg.style.display = "block";
 
-  previewDesc.textContent = game.description;
+  previewDesc.textContent = game.description || "";
   previewDesc.style.display = game.description ? "block" : "none";
+
   credits.style.display = game.creditText ? "block" : "none";
-  creditText.textContent = game.creditText;
-  creditText.href = game.creditLink;
-  creditText.target = "_blank";
   credits.innerHTML = "Created by ";
+  creditText.textContent = game.creditText || "";
+  creditText.href = game.creditLink || "#";
+  creditText.target = "_blank";
   credits.appendChild(creditText);
 
   previewDesc.className = "preview-box";
@@ -88,10 +86,49 @@ function updatePreview(game) {
     credits.after(warningDiv);
   }
 
-  const themeClass = game.theme || "theme-green";
-  if (themeClass.startsWith("theme-")) {
-    previewDesc.classList.add(themeClass);
-    credits.classList.add(themeClass);
+  const themeClass = game.theme || "theme-auto";
+
+  const applyThemeFromImage = () => {
+    try {
+      const colorThief = new ColorThief();
+      const palette = colorThief.getPalette(previewImg, 5);
+
+      const [r1, g1, b1] = palette[0];
+      const backgroundColor = `rgba(${r1}, ${g1}, ${b1}, 0.85)`;
+      const darker = `rgb(${Math.max(0, r1 - 40)}, ${Math.max(0, g1 - 40)}, ${Math.max(
+        0,
+        b1 - 40
+      )})`;
+
+      const luminance = 0.299 * r1 + 0.587 * g1 + 0.114 * b1;
+      const fontColor = luminance < 128 ? "#ffffff" : "#000000";
+
+      if (!document.getElementById(`style-${themeClass}`)) {
+        const style = document.createElement("style");
+        style.id = `style-${themeClass}`;
+        style.textContent = `
+          .${themeClass} {
+            --background-color: ${backgroundColor};
+            --border-gradient-start: ${backgroundColor};
+            --border-gradient-end: ${darker};
+            --text-color: ${fontColor};
+            --border-color: ${fontColor};
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      previewDesc.classList.add(themeClass);
+      credits.classList.add(themeClass);
+    } catch (err) {
+      console.warn("Color extraction failed:", err);
+    }
+  };
+
+  if (previewImg.complete) {
+    applyThemeFromImage();
+  } else {
+    previewImg.onload = applyThemeFromImage;
   }
 
   if (game.video) {
