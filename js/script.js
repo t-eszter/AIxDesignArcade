@@ -51,13 +51,11 @@ function updatePreview(game) {
 
   clearTimeout(previewImg._videoTimeout);
 
-  // Remove any previous video
   const existingVideo = document.getElementById("preview-video");
   if (existingVideo) existingVideo.remove();
   previewImg.classList.remove("fade-out");
   previewImg.style.opacity = "1";
 
-  // Restore image visibility
   previewImg.style.opacity = "1";
   previewImg.style.display = "block";
   previewImg.classList.remove("fade-out");
@@ -98,24 +96,21 @@ function updatePreview(game) {
 
   if (game.video) {
     previewImg._videoTimeout = setTimeout(() => {
-      // 1. create the element with the base selector only (opacity: 0)
       const videoEl = document.createElement("video");
       videoEl.id = "preview-video";
       videoEl.src = game.video;
       videoEl.autoplay = true;
       videoEl.muted = true;
       videoEl.loop = true;
-      videoEl.playsInline = true; // inherits opacity:0 from #preview-video
+      videoEl.playsInline = true;
       videoEl.style.maxWidth = "100%";
       videoEl.style.borderRadius = "8px";
 
-      // put it right after the image
       previewImg.parentElement.insertBefore(videoEl, previewImg.nextSibling);
 
-      // 2. let the browser paint once, then switch opacities
       requestAnimationFrame(() => {
-        videoEl.classList.add("fade-in"); // fades video 0 → 1
-        previewImg.classList.add("fade-out"); // fades image 1 → 0
+        videoEl.classList.add("fade-in");
+        previewImg.classList.add("fade-out");
       });
     }, 3000);
   }
@@ -137,13 +132,25 @@ function updateActiveGame() {
 const overlay = document.getElementById("overlay");
 const iframe = document.getElementById("game-iframe");
 const closeBtn = document.getElementById("close-overlay");
+const disclaimer = document.getElementById("disclaimer-text");
+const openDisclaimerBtn = document.getElementById("open-disclaimer");
+const overlayContent = document.querySelector(".overlay-content");
 
 function openOverlay(url) {
-  iframe.src = url;
   overlay.classList.remove("hidden");
+  overlay.classList.remove("disclaimer-mode");
+  iframe.src = url;
+  disclaimer.classList.add("hidden");
 }
 
+openDisclaimerBtn.addEventListener("click", () => {
+  overlay.classList.remove("hidden");
+  overlay.classList.add("disclaimer-mode");
+  disclaimer.classList.remove("hidden");
+});
+
 closeBtn.addEventListener("click", () => {
-  iframe.src = ""; // clear the iframe
   overlay.classList.add("hidden");
+  overlay.classList.remove("disclaimer-mode");
+  disclaimer.classList.add("hidden");
 });
