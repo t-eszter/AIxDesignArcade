@@ -45,6 +45,11 @@ gameElements.forEach((el, index) => {
     currentIndex = index;
     updateActiveGame();
   });
+
+  el.addEventListener("mouseenter", () => {
+    currentIndex = index;
+    setActiveGame(currentIndex, false);
+  });
 });
 
 function updatePreview(game) {
@@ -160,25 +165,31 @@ function updatePreview(game) {
         previewImg.classList.remove("fade-out");
         previewImg.style.opacity = "1";
       });
-    }, 3000);
+    }, 2000);
   }
 }
 
-function updateActiveGame() {
+function setActiveGame(index, scroll = true) {
   gameElements.forEach((el, i) => {
-    el.classList.toggle("active", i === currentIndex);
+    el.classList.toggle("active", i === index);
   });
 
-  const activeElement = gameElements[currentIndex];
-  const gamesContainer = document.getElementById("games");
+  if (scroll) {
+    const activeElement = gameElements[index];
+    const gamesContainer = document.getElementById("games");
 
-  const elementTop = activeElement.offsetTop;
-  const elementHeight = activeElement.offsetHeight;
-  const containerHeight = gamesContainer.clientHeight;
+    const elementTop = activeElement.offsetTop;
+    const elementHeight = activeElement.offsetHeight;
+    const containerHeight = gamesContainer.clientHeight;
 
-  gamesContainer.scrollTop = elementTop - containerHeight / 2 + elementHeight / 2;
+    gamesContainer.scrollTop = elementTop - containerHeight / 2 + elementHeight / 2;
+  }
 
-  updatePreview(games[currentIndex]);
+  updatePreview(games[index]);
+}
+
+function updateActiveGame() {
+  setActiveGame(currentIndex, true);
 }
 
 const overlay = document.getElementById("overlay");
