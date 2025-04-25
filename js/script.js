@@ -1,6 +1,11 @@
 const gamesContainer = document.getElementById("games");
 
 games.forEach((game) => {
+  const img = new Image();
+  img.src = game.image;
+});
+
+games.forEach((game) => {
   const gameLink = document.createElement("a");
   gameLink.href = "#";
   gameLink.addEventListener("click", (e) => {
