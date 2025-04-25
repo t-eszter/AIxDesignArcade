@@ -101,7 +101,7 @@ function updatePreview(game) {
       videoEl.src = game.video;
       videoEl.autoplay = true;
       videoEl.muted = true;
-      videoEl.loop = true;
+      videoEl.loop = false;
       videoEl.playsInline = true;
       videoEl.style.maxWidth = "100%";
       videoEl.style.borderRadius = "8px";
@@ -112,6 +112,12 @@ function updatePreview(game) {
         videoEl.classList.add("fade-in");
         previewImg.classList.add("fade-out");
       });
+
+      videoEl.addEventListener("ended", () => {
+        videoEl.remove();
+        previewImg.classList.remove("fade-out");
+        previewImg.style.opacity = "1";
+      });
     }, 3000);
   }
 }
@@ -121,10 +127,14 @@ function updateActiveGame() {
     el.classList.toggle("active", i === currentIndex);
   });
 
-  gameElements[currentIndex].scrollIntoView({
-    behavior: "smooth",
-    block: "center",
-  });
+  const activeElement = gameElements[currentIndex];
+  const gamesContainer = document.getElementById("games");
+
+  const elementTop = activeElement.offsetTop;
+  const elementHeight = activeElement.offsetHeight;
+  const containerHeight = gamesContainer.clientHeight;
+
+  gamesContainer.scrollTop = elementTop - containerHeight / 2 + elementHeight / 2;
 
   updatePreview(games[currentIndex]);
 }
@@ -139,8 +149,11 @@ const overlayContent = document.querySelector(".overlay-content");
 function openOverlay(url) {
   overlay.classList.remove("hidden");
   overlay.classList.remove("disclaimer-mode");
-  iframe.src = url;
+  overlayContent.classList.remove("disclaimer-mode");
   disclaimer.classList.add("hidden");
+  iframe.src = url;
+  iframe.style.opacity = "1";
+  iframe.style.pointerEvents = "auto";
 }
 
 openDisclaimerBtn.addEventListener("click", () => {
@@ -152,5 +165,9 @@ openDisclaimerBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   overlay.classList.add("hidden");
   overlay.classList.remove("disclaimer-mode");
+  overlayContent.classList.remove("disclaimer-mode");
   disclaimer.classList.add("hidden");
+  iframe.src = "";
+  iframe.style.opacity = "1";
+  iframe.style.pointerEvents = "auto";
 });

@@ -453,3 +453,7 @@ a.game.active {
   text-align: center;
   box-shadow: 0 0 0 2px #000, 0 0 0 4px #ff66cc, 0 0 0 6px #000;
 }
+
+.hidden {
+  display: none !important;
+}
