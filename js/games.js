@@ -101,9 +101,9 @@ const games = [
     description:
       "The goal of Fool's Gold is to playfully consider what “makes you human.” While most interactions with large language models are cold or transactional, this game encourages (and rewards) vulnerability and self-reflection.",
     creditText: "Dustin Brown",
-    creditLink: "https://www.are.na/dustin-brown/ai-exhibit-inspo",
+    creditLink: "https://www.dustinbrown.site",
     theme: "theme-foolsgold",
-    embed: true,
+    embed: false,
   },
   {
     title: "GPT Prompt Attack",
@@ -175,6 +175,6 @@ const games = [
     creditText: "Google Partner Innovation & bit.studio",
     creditLink: "https://experiments.withgoogle.com/scroobly",
     theme: "theme-scroobly",
-    embed: true,
+    embed: false,
   },
 ];
