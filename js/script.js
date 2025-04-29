@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const MORE_GAMES_PREVIEW_IMAGE = "../img/more_games.jpg";
+  const MORE_GAMES_PREVIEW_IMAGE = "/img/more_games.jpg";
 
   const gamesContainer = document.getElementById("games");
   const overlay = document.getElementById("overlay");
